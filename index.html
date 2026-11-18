@@ -22,6 +22,12 @@
 .topbar{position:sticky;top:0;z-index:5;background:#f8f4eced;backdrop-filter:blur(12px);border-bottom:1px solid #c8a96a35;text-align:center;padding:13px 12px;color:var(--green);font:italic 19px "Cormorant Garamond",serif;letter-spacing:.08em}
 main{overflow:hidden}.hero{min-height:690px;display:grid;place-items:center;position:relative;text-align:center;padding:70px 22px 80px;background:radial-gradient(ellipse at 50% 35%,#fff 0%,#f8f4ec 65%)}.ornament{color:var(--gold);font:24px "Cormorant Garamond",serif;letter-spacing:.4em}.eyebrow{font-size:9px;letter-spacing:.34em;text-transform:uppercase;color:#9c804c;margin:20px 0 15px}.hero h1{font:500 clamp(55px,12vw,94px)/.83 "Cormorant Garamond",serif;margin:0;color:var(--green)}.hero h1 span{display:block;font-style:italic;color:#b18c4e;font-size:.75em;margin:13px 0}.hero-rule{width:70px;height:1px;background:var(--gold);margin:27px auto}.hero p{font:italic 21px/1.5 "Cormorant Garamond",serif;color:#58675d;max-width:440px;margin:0 auto}
 .section{padding:82px 22px;text-align:center;position:relative}.section.dark{background:var(--green);color:#f8f1e4}.section.soft{background:#f0e9dc}.section-label{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:#b18c4e;margin-bottom:16px}.dark .section-label{color:var(--gold)}h2{font:500 clamp(36px,8vw,55px)/1.05 "Cormorant Garamond",serif;margin:0 0 24px;color:var(--green)}.dark h2{color:#f5e8cb}.body-copy{max-width:570px;margin:0 auto;font:400 14px/2.1 Manrope,sans-serif;color:#647168}.dark .body-copy{color:#e0ddcf}
+
+.host-card{max-width:520px;margin:30px auto 0;padding:30px 22px;border:1px solid #c8a96a77;background:linear-gradient(145deg,#fffdf8,#f1e9dc);box-shadow:0 14px 36px #26372e0b}
+.host-caption{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#a9874c;margin-bottom:13px}
+.host-names{font:italic 500 clamp(27px,6vw,36px)/1.25 "Cormorant Garamond",serif;color:var(--green)}
+.host-divider{width:42px;height:1px;background:var(--gold);margin:17px auto}
+.host-note{font:italic 17px/1.6 "Cormorant Garamond",serif;color:#69766b}
 .poem{max-width:480px;margin:30px auto 0;font:italic 22px/1.75 "Cormorant Garamond",serif;color:#a9874c}.poem span{display:block}
 .date-grid{display:flex;justify-content:center;align-items:center;gap:28px;margin:34px auto 0;max-width:540px}.date-side{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#a58a57;line-height:2}.date-number{font:500 78px/.9 "Cormorant Garamond",serif;color:var(--gold2);border-left:1px solid #c8a96a77;border-right:1px solid #c8a96a77;padding:0 30px}.date-year{font:500 22px "Cormorant Garamond",serif;letter-spacing:.2em;color:#f4e8ce;margin-top:14px}
 .details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:650px;margin:35px auto 0}.detail{border:1px solid #c8a96a66;padding:25px 15px;background:#ffffff08}.detail-icon{font-size:20px;color:var(--gold);margin-bottom:12px}.detail-label{font-size:9px;letter-spacing:.25em;color:#c8b78e;text-transform:uppercase}.detail-value{font:500 25px "Cormorant Garamond",serif;color:#f7edd8;margin-top:9px}.detail-sub{font-size:11px;color:#c5c9bd;margin-top:7px}
@@ -77,13 +83,24 @@ main{overflow:hidden}.hero{min-height:690px;display:grid;place-items:center;posi
       </div>
     </section>
 
+    <section class="section">
+      <div class="fade">
+        <div class="host-card">
+          <div class="host-caption">Той иелері</div>
+          <div class="host-names">Аманкелді және Алтынхан</div>
+          <div class="host-divider"></div>
+          <div class="host-note">Сіздерді қуанышымызды бірге бөлісуге шақырамыз!</div>
+        </div>
+      </div>
+    </section>
+
     <section class="section dark">
       <div class="fade">
         <div class="section-label">Той салтанаты</div>
         <h2>Қуанышымызға<br>ортақ болыңыздар</h2>
         <div class="date-grid">
           <div class="date-side">Желтоқсан<br>Сейсенбі</div>
-          <div class="date-number" id="day">15</div>
+          <div class="date-number" id="day">2</div>
           <div class="date-side">Сағат<br>18:00</div>
         </div>
         <div class="date-year" id="year">2026</div>
