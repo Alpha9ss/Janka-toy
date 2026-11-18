@@ -3,48 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10271f">
+<meta name="theme-color" content="#f8f2ef">
 <title>Жарқын & Жаңылсын — Үйлену тойына шақыру</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <style>
-:root{--green:#10271f;--green2:#1b3a2d;--gold:#c8a96a;--gold2:#ead8ad;--cream:#f8f4ec;--ink:#26372e;--muted:#77786e}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Manrope, sans-serif;font-weight:300}button,input,textarea{font:inherit}button{cursor:pointer}
-.opening{position:fixed;inset:0;z-index:20;background:var(--green);display:grid;place-items:center;padding:24px;transition:opacity .9s ease,visibility .9s ease}.opening.hide{opacity:0;visibility:hidden;pointer-events:none}
-.opening:before,.opening:after{content:"";position:absolute;inset:14px;border:1px solid rgba(200,169,106,.55);pointer-events:none}.opening:after{inset:21px;border-color:rgba(200,169,106,.18)}
-.open-card{width:min(100%,440px);text-align:center;color:var(--gold2);position:relative;z-index:1}.monogram{font:500 17px "Cormorant Garamond",serif;letter-spacing:.28em;color:var(--gold);margin-bottom:20px}
-.cover-frame{position:relative;padding:9px;border:1px solid var(--gold);background:rgba(255,255,255,.025);box-shadow:0 24px 70px #0005}.cover-frame:before{content:"";position:absolute;inset:4px;border:1px solid #c8a96a55;pointer-events:none;z-index:1}
-.cover{width:100%;height:min(57vh,590px);display:block;object-fit:cover;background:linear-gradient(145deg,#294638,#0c1d17);color:var(--gold2);font-size:13px}
-.open-kicker{font:italic 19px "Cormorant Garamond",serif;letter-spacing:.12em;margin:23px 0 7px}.couple{font:500 clamp(35px,8vw,54px)/.98 "Cormorant Garamond",serif;color:#f8eed9;margin:0}.amp{color:var(--gold);font-style:italic}.open-date{font-size:10px;letter-spacing:.3em;color:#cbb98f;margin:17px 0 24px}
-.gold-btn{border:1px solid var(--gold);background:linear-gradient(135deg,#d9bd80,#b58f4c);color:#172a20;padding:15px 30px;letter-spacing:.15em;text-transform:uppercase;font-size:10px;font-weight:600;transition:.3s;box-shadow:0 8px 25px #0003}.gold-btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px #0004}
-.page{opacity:0;transition:opacity 1s ease}.page.show{opacity:1}
-.topbar{position:sticky;top:0;z-index:5;background:#f8f4eced;backdrop-filter:blur(12px);border-bottom:1px solid #c8a96a35;text-align:center;padding:13px 12px;color:var(--green);font:italic 19px "Cormorant Garamond",serif;letter-spacing:.08em}
-main{overflow:hidden}.hero{min-height:690px;display:grid;place-items:center;position:relative;text-align:center;padding:70px 22px 80px;background:radial-gradient(ellipse at 50% 35%,#fff 0%,#f8f4ec 65%)}.ornament{color:var(--gold);font:24px "Cormorant Garamond",serif;letter-spacing:.4em}.eyebrow{font-size:9px;letter-spacing:.34em;text-transform:uppercase;color:#9c804c;margin:20px 0 15px}.hero h1{font:500 clamp(55px,12vw,94px)/.83 "Cormorant Garamond",serif;margin:0;color:var(--green)}.hero h1 span{display:block;font-style:italic;color:#b18c4e;font-size:.75em;margin:13px 0}.hero-rule{width:70px;height:1px;background:var(--gold);margin:27px auto}.hero p{font:italic 21px/1.5 "Cormorant Garamond",serif;color:#58675d;max-width:440px;margin:0 auto}
-.section{padding:82px 22px;text-align:center;position:relative}.section.dark{background:var(--green);color:#f8f1e4}.section.soft{background:#f0e9dc}.section-label{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:#b18c4e;margin-bottom:16px}.dark .section-label{color:var(--gold)}h2{font:500 clamp(36px,8vw,55px)/1.05 "Cormorant Garamond",serif;margin:0 0 24px;color:var(--green)}.dark h2{color:#f5e8cb}.body-copy{max-width:570px;margin:0 auto;font:400 14px/2.1 Manrope,sans-serif;color:#647168}.dark .body-copy{color:#e0ddcf}
-
-.host-card{max-width:520px;margin:30px auto 0;padding:30px 22px;border:1px solid #c8a96a77;background:linear-gradient(145deg,#fffdf8,#f1e9dc);box-shadow:0 14px 36px #26372e0b}
-.host-caption{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#a9874c;margin-bottom:13px}
-.host-names{font:italic 500 clamp(27px,6vw,36px)/1.25 "Cormorant Garamond",serif;color:var(--green)}
-.host-divider{width:42px;height:1px;background:var(--gold);margin:17px auto}
-.host-note{font:italic 17px/1.6 "Cormorant Garamond",serif;color:#69766b}
-.poem{max-width:480px;margin:30px auto 0;font:italic 22px/1.75 "Cormorant Garamond",serif;color:#a9874c}.poem span{display:block}
-.date-grid{display:flex;justify-content:center;align-items:center;gap:28px;margin:34px auto 0;max-width:540px}.date-side{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#a58a57;line-height:2}.date-number{font:500 78px/.9 "Cormorant Garamond",serif;color:var(--gold2);border-left:1px solid #c8a96a77;border-right:1px solid #c8a96a77;padding:0 30px}.date-year{font:500 22px "Cormorant Garamond",serif;letter-spacing:.2em;color:#f4e8ce;margin-top:14px}
-.details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:650px;margin:35px auto 0}.detail{border:1px solid #c8a96a66;padding:25px 15px;background:#ffffff08}.detail-icon{font-size:20px;color:var(--gold);margin-bottom:12px}.detail-label{font-size:9px;letter-spacing:.25em;color:#c8b78e;text-transform:uppercase}.detail-value{font:500 25px "Cormorant Garamond",serif;color:#f7edd8;margin-top:9px}.detail-sub{font-size:11px;color:#c5c9bd;margin-top:7px}
-.venue-card{max-width:550px;margin:32px auto 0;border:1px solid #c8a96a66;padding:34px 20px}.venue-name{font:500 38px "Cormorant Garamond",serif;color:var(--green)}.venue-loc{font-size:12px;color:#69776c;line-height:1.9;margin:10px 0 22px}.outline-btn{display:inline-block;border:1px solid var(--gold);padding:13px 24px;color:#8e713e;text-decoration:none;font-size:9px;letter-spacing:.18em;text-transform:uppercase;transition:.25s}.outline-btn:hover{background:var(--green);color:#fff}
-.rsvp-wrap{max-width:510px;margin:32px auto 0;text-align:left}.rsvp-wrap label{display:block;font-size:10px;letter-spacing:.12em;color:#d9cba9;margin:18px 0 8px}.rsvp-wrap input,.rsvp-wrap select,.rsvp-wrap textarea{width:100%;border:1px solid #c8a96a66;background:#ffffff0b;color:#fff;padding:14px 13px;outline:none;border-radius:0}.rsvp-wrap select option{color:#172a20}.rsvp-wrap input:focus,.rsvp-wrap select:focus,.rsvp-wrap textarea:focus{border-color:var(--gold)}.rsvp-wrap textarea{min-height:82px;resize:vertical}.rsvp-wrap .gold-btn{width:100%;margin-top:22px}.form-note{text-align:center;font-size:10px;color:#c4c8bb;margin-top:13px}
-.footer{background:#0b1b15;color:var(--gold2);text-align:center;padding:60px 20px 45px;border-top:1px solid #c8a96a66}.footer .couple{font-size:45px}.footer small{display:block;color:#b9b19d;font-size:9px;letter-spacing:.2em;margin-top:20px}
-.music{position:fixed;right:18px;bottom:18px;z-index:8;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:var(--green);color:var(--gold2);font-size:17px;box-shadow:0 5px 20px #0002;display:none}.music.on{display:block}.music.playing{animation:spin 6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-.fade{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}.fade.visible{opacity:1;transform:none}
-@media(max-width:520px){.hero{min-height:590px}.section{padding:68px 20px}.details{gap:9px}.detail{padding:21px 9px}.detail-value{font-size:22px}.date-grid{gap:15px}.date-number{font-size:68px;padding:0 21px}.cover{height:53vh}}
+:root{
+  --green:#173d30;--green-dark:#102b22;--sage:#789083;
+  --gold:#b89a62;--gold-light:#dfcda7;--pink:#f5e9e7;
+  --pink-deep:#ead8d5;--paper:#fffdfa;--ink:#34443b;--muted:#7b8179;
+  --serif:"Cormorant Garamond",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,sans-serif;font-weight:300}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.opening{position:fixed;inset:0;z-index:30;background:var(--green-dark);display:grid;place-items:center;padding:24px;transition:opacity .85s ease,visibility .85s ease}
+.opening.hide{opacity:0;visibility:hidden;pointer-events:none}
+.opening:before,.opening:after{content:"";position:absolute;inset:13px;border:1px solid #c7aa706e;pointer-events:none}
+.opening:after{inset:20px;border-color:#c7aa7033}
+.open-card{width:min(100%,430px);text-align:center;color:#f8f0e4;position:relative;z-index:1}
+.monogram{font:500 16px var(--serif);letter-spacing:.32em;color:var(--gold-light);margin-bottom:17px}
+.cover-frame{padding:8px;border:1px solid var(--gold);position:relative;box-shadow:0 22px 65px #0005}
+.cover-frame:after{content:"";position:absolute;inset:4px;border:1px solid #dfcda766;pointer-events:none}
+.cover{display:block;width:100%;height:min(48vh,430px);object-fit:cover;background:#34483d}
+.open-kicker{font:italic 19px var(--serif);margin:20px 0 8px;color:#e5d8bd}
+.couple{font:500 clamp(37px,9vw,53px)/.98 var(--serif);margin:0;color:#fff8ec}
+.amp{color:var(--gold-light);font-style:italic}
+.open-date{font-size:9px;letter-spacing:.3em;color:#d9c7a1;margin:16px 0 22px}
+.gold-btn{border:1px solid var(--gold);background:linear-gradient(135deg,#ddc797,#b49358);color:#183329;padding:14px 27px;letter-spacing:.15em;text-transform:uppercase;font-size:10px;font-weight:600;transition:.25s;box-shadow:0 7px 22px #0002}
+.gold-btn:hover{transform:translateY(-2px);box-shadow:0 11px 25px #0003}
+.page{opacity:0;transition:opacity .8s ease}
+.page.show{opacity:1}
+.site-head{position:sticky;top:0;z-index:12;background:#fffdfaed;backdrop-filter:blur(14px);border-bottom:1px solid #b89a622c}
+.brand{text-align:center;padding:10px 12px 3px;font:italic 20px var(--serif);color:var(--green);letter-spacing:.04em}
+.nav{display:flex;justify-content:center;gap:clamp(12px,3vw,30px);padding:5px 10px 12px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{text-decoration:none;font-size:9px;letter-spacing:.08em;color:#66736a;transition:.2s}
+.nav a:hover{color:var(--gold)}
+main{overflow:hidden}
+.hero{padding:34px 20px 65px;text-align:center;background:linear-gradient(180deg,#f8efed 0%,#fffdfa 100%)}
+.hero-photo-wrap{max-width:690px;margin:0 auto 30px;padding:7px;background:#fff;border:1px solid #d8c39a;box-shadow:0 18px 50px #5b443015}
+.hero-photo{display:block;width:100%;max-height:590px;aspect-ratio:4/5;object-fit:cover;background:#e8dfd9}
+.eyebrow,.section-label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#a18451}
+.eyebrow{margin:0 0 14px}
+.hero h1{font:500 clamp(49px,10vw,82px)/.86 var(--serif);color:var(--green);margin:0}
+.hero h1 span{display:block;color:#b99a62;font-style:italic;font-size:.7em;margin:10px 0}
+.hero-rule{width:55px;height:1px;background:var(--gold);margin:22px auto}
+.hero-copy{font:italic 21px/1.5 var(--serif);color:#68776c;max-width:440px;margin:0 auto}
+.flourish{font:25px var(--serif);color:var(--gold);margin-top:23px}
+.section{padding:72px 21px;text-align:center;position:relative}
+.section.blush{background:var(--pink)}
+.section.soft{background:#f8f5ee}
+.section.green{background:var(--green);color:#f8f1e6}
+.section-label{margin-bottom:14px}
+.green .section-label{color:var(--gold-light)}
+h2{font:500 clamp(36px,7vw,54px)/1.04 var(--serif);color:var(--green);margin:0 0 22px}
+.green h2{color:#f8efdf}
+.body-copy{max-width:570px;margin:0 auto;font-size:13px;line-height:2.05;color:#68766d}
+.green .body-copy{color:#e4e4d8}
+.poem{font:italic 21px/1.65 var(--serif);color:#a18451;margin:27px auto 0;max-width:480px}
+.poem span{display:block}
+.host-card{max-width:520px;margin:28px auto 0;padding:29px 20px;background:#fffdfa;border:1px solid #d9c69f;box-shadow:0 12px 35px #54452a0b}
+.host-overline{font-size:9px;letter-spacing:.25em;color:#a18451;text-transform:uppercase}
+.host-names{font:italic 500 clamp(29px,6vw,39px)/1.2 var(--serif);color:var(--green);margin:13px 0}
+.host-divider{width:42px;height:1px;background:var(--gold);margin:15px auto}
+.host-note{font:italic 17px/1.5 var(--serif);color:#778078}
+.date-panel{max-width:570px;margin:30px auto 0;padding:30px 20px;border:1px solid #b89a6277;background:#ffffff09}
+.date-top{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light)}
+.date-number{font:500 clamp(75px,15vw,100px)/.95 var(--serif);color:#f4e7cd;margin:12px 0}
+.date-month{font:500 22px var(--serif);color:#f4e7cd;letter-spacing:.12em}
+.date-weekday{font-size:10px;letter-spacing:.2em;color:#d9d9cc;margin-top:9px}
+.date-details{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:570px;margin:14px auto 0}
+.date-detail{padding:18px 10px;border:1px solid #b89a624f;background:#ffffff08}
+.date-detail b{display:block;font:500 23px var(--serif);color:#f5e9d3;margin-top:6px}
+.date-detail span{font-size:9px;letter-spacing:.2em;color:#d7c7a4;text-transform:uppercase}
+.venue-card{max-width:500px;margin:28px auto 0;padding:29px 20px;background:#fff;border:1px solid #d8c69f;box-shadow:0 12px 34px #4d44300b}
+.venue-icon{font-size:23px;color:var(--gold)}
+.venue-name{font:500 39px var(--serif);color:var(--green);margin:8px 0}
+.venue-loc{font-size:12px;line-height:1.9;color:#738076;margin:0 0 20px}
+.map-btn{display:inline-block;text-decoration:none;background:var(--green);color:#fff8eb;padding:13px 24px;border-radius:2px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;transition:.2s}
+.map-btn:hover{background:var(--green-dark);transform:translateY(-2px)}
+.rsvp{max-width:490px;margin:28px auto 0;text-align:left}
+.rsvp label{display:block;font-size:10px;letter-spacing:.1em;color:#e6d8bc;margin:17px 0 7px}
+.rsvp input,.rsvp select,.rsvp textarea{width:100%;border:1px solid #c9b88e88;background:#ffffff12;color:#fff;padding:14px 13px;border-radius:2px;outline:none}
+.rsvp input::placeholder,.rsvp textarea::placeholder{color:#c7c8bb}
+.rsvp select option{color:#183329}
+.rsvp input:focus,.rsvp select:focus,.rsvp textarea:focus{border-color:var(--gold-light)}
+.rsvp textarea{min-height:85px;resize:vertical}
+.rsvp .gold-btn{width:100%;margin-top:21px}
+.form-note{text-align:center;font-size:10px;color:#d4d2c5;margin-top:13px}
+.footer{background:var(--green-dark);color:#f3e8d1;text-align:center;padding:54px 20px 43px;border-top:1px solid #b89a6277}
+.footer .flourish{margin:0 0 12px}
+.footer .couple{font-size:clamp(38px,8vw,48px)}
+.footer small{display:block;color:#c9c1ae;font-size:8px;letter-spacing:.18em;line-height:1.8;margin-top:18px}
+.music{position:fixed;right:17px;bottom:17px;z-index:15;width:45px;height:45px;border-radius:50%;border:1px solid var(--gold);background:var(--green);color:#f4e7cd;font-size:17px;box-shadow:0 5px 18px #0002;display:none}
+.music.on{display:block}
+.music.playing{animation:turn 6s linear infinite}
+@keyframes turn{to{transform:rotate(360deg)}}
+.fade{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.fade.visible{opacity:1;transform:none}
+@media(max-width:520px){
+ .brand{font-size:18px}.nav{justify-content:flex-start;padding-left:17px;gap:22px}
+ .hero{padding:22px 15px 55px}.hero-photo{aspect-ratio:4/5;max-height:520px}
+ .section{padding:60px 18px}.date-details{gap:8px}.date-detail{padding:16px 7px}
+ .opening:before{inset:10px}.opening:after{inset:16px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fade,.page,.opening{transition:none}}
 </style>
 </head>
 <body>
-<!-- OPENING COVER: replace cover.jpg with your sister's single cover photo -->
 <section class="opening" id="opening">
   <div class="open-card">
     <div class="monogram">Ж & Ж</div>
-    <div class="cover-frame"><img class="cover" src="cover.jpg" alt="Жархын мен Жанылсынның суреті"></div>
+    <div class="cover-frame"><img class="cover" src="cover.jpg" alt="Жарқын мен Жаңылсынның суреті"></div>
     <div class="open-kicker">Сіздерді қуанышымызға ортақтасуға шақырамыз</div>
     <h1 class="couple">Жарқын <span class="amp">&</span> Жаңылсын</h1>
     <div class="open-date">ҮЙЛЕНУ ТОЙЫ · 2026</div>
@@ -56,20 +131,30 @@ main{overflow:hidden}.hero{min-height:690px;display:grid;place-items:center;posi
 <button class="music" id="musicBtn" aria-label="Музыканы қосу немесе тоқтату">♫</button>
 
 <div class="page" id="page">
-  <header class="topbar">Жарқын & Жаңылсын</header>
+  <header class="site-head">
+    <div class="brand">Жарқын & Жаңылсын</div>
+    <nav class="nav" aria-label="Негізгі бөлімдер">
+      <a href="#invitation">Шақыру</a>
+      <a href="#hosts">Той иелері</a>
+      <a href="#date">Күні мен уақыты</a>
+      <a href="#venue">Мекен-жайы</a>
+      <a href="#rsvp">Жауап беру</a>
+    </nav>
+  </header>
+
   <main>
-    <section class="hero">
+    <section class="hero" id="invitation">
       <div class="fade">
-        <div class="ornament">✧ ❦ ✧</div>
+        <div class="hero-photo-wrap"><img class="hero-photo" src="cover.jpg" alt="Жарқын мен Жаңылсын"></div>
         <div class="eyebrow">Өміріміздің ең ерекше күні</div>
         <h1>Жарқын <span>&</span> Жаңылсын</h1>
         <div class="hero-rule"></div>
-        <p>Екі жүрек, бір тағдыр, бір шаңырақ астындағы жаңа өмір...</p>
-        <div class="ornament" style="margin-top:32px">❦</div>
+        <p class="hero-copy">Екі жүрек, бір тағдыр, бір шаңырақ астындағы жаңа өмір...</p>
+        <div class="flourish">✧ ❦ ✧</div>
       </div>
     </section>
 
-    <section class="section soft">
+    <section class="section blush">
       <div class="fade">
         <div class="section-label">Шақыру сөздер</div>
         <h2>Құрметті ағайын-туыс,<br>бауырлар мен достар!</h2>
@@ -83,53 +168,53 @@ main{overflow:hidden}.hero{min-height:690px;display:grid;place-items:center;posi
       </div>
     </section>
 
-    <section class="section">
+    <section class="section soft" id="hosts">
       <div class="fade">
         <div class="host-card">
-          <div class="host-caption">Той иелері</div>
+          <div class="host-overline">Той иелері</div>
           <div class="host-names">Аманкелді және Алтынхан</div>
           <div class="host-divider"></div>
-          <div class="host-note">Сіздерді қуанышымызды бірге бөлісуге шақырамыз!</div>
+          <div class="host-note">Ақ дастарханымыздың қадірлі қонағы болыңыздар!</div>
         </div>
       </div>
     </section>
 
-    <section class="section dark">
+    <section class="section green" id="date">
       <div class="fade">
         <div class="section-label">Той салтанаты</div>
         <h2>Қуанышымызға<br>ортақ болыңыздар</h2>
-        <div class="date-grid">
-          <div class="date-side">Желтоқсан<br>Сейсенбі</div>
-          <div class="date-number" id="day">2</div>
-          <div class="date-side">Сағат<br>18:00</div>
+        <div class="date-panel">
+          <div class="date-top">Күні</div>
+          <div class="date-number">02</div>
+          <div class="date-month">ЖЕЛТОҚСАН · 2026</div>
+          <div class="date-weekday">СӘРСЕНБІ</div>
         </div>
-        <div class="date-year" id="year">2026</div>
-        <div class="details">
-          <div class="detail"><div class="detail-icon">✧</div><div class="detail-label">Күні</div><div class="detail-value" id="dateText">Желтоқсан, 2026</div><div class="detail-sub">Той басталуы</div></div>
-          <div class="detail"><div class="detail-icon">◷</div><div class="detail-label">Уақыты</div><div class="detail-value">18:00</div><div class="detail-sub">Қонақтарды күту уақыты</div></div>
+        <div class="date-details">
+          <div class="date-detail"><span>Басталуы</span><b>18:00</b></div>
+          <div class="date-detail"><span>Жылы</span><b>2026</b></div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="venue">
       <div class="fade">
         <div class="section-label">Мекен-жайы</div>
         <h2>Той төрінде<br>кездескенше!</h2>
         <div class="venue-card">
-          <div class="ornament">✧</div>
+          <div class="venue-icon">✧</div>
           <div class="venue-name">Sky Palace</div>
-          <div class="venue-loc">Баян-Өлгий аймағы<br>Өлгей қаласы</div>
-          <a class="outline-btn" href="https://www.google.com/maps/search/?api=1&query=Sky+Palace+Olgii+Bayan-Ulgii+Mongolia" target="_blank" rel="noopener">Картадан көру</a>
+          <p class="venue-loc">Баян-Өлгий аймағы<br>Өлгей қаласы</p>
+          <a class="map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sky+Palace+Olgii+Bayan-Ulgii+Mongolia" target="_blank" rel="noopener">Картадан көру</a>
         </div>
       </div>
     </section>
 
-    <section class="section dark">
+    <section class="section green" id="rsvp">
       <div class="fade">
         <div class="section-label">Кері байланыс</div>
         <h2>Келетініңізді<br>растауыңызды сұраймыз</h2>
         <p class="body-copy">Тойға қатысуыңызды төмендегі нысанды толтыру арқылы хабарласаңыз болады. Сізді асыға күтеміз!</p>
-        <form class="rsvp-wrap" action="https://formspree.io/f/myewzejb" method="POST">
+        <form class="rsvp" action="https://formspree.io/f/myewzejb" method="POST">
           <label for="guest">Есіміңіз</label>
           <input id="guest" name="Есімі" type="text" placeholder="Атыңызды жазыңыз" required>
           <label for="attendance">Тойға қатысасыз ба?</label>
@@ -146,26 +231,46 @@ main{overflow:hidden}.hero{min-height:690px;display:grid;place-items:center;posi
       </div>
     </section>
   </main>
+
   <footer class="footer">
-    <div class="ornament">❦</div>
+    <div class="flourish">❦</div>
     <div class="open-kicker">Ізгі ниетпен,</div>
     <div class="couple">Жарқын <span class="amp">&</span> Жаңылсын</div>
     <small>ҚУАНЫШЫМЫЗҒА ОРТАҚ БОЛҒАНЫҢЫЗ ҮШІН РАҚМЕТ!</small>
   </footer>
 </div>
+
 <script>
-const opening=document.getElementById('opening'), page=document.getElementById('page');
-const audio=document.getElementById('weddingMusic'), musicBtn=document.getElementById('musicBtn');
+const opening=document.getElementById('opening');
+const page=document.getElementById('page');
+const audio=document.getElementById('weddingMusic');
+const musicBtn=document.getElementById('musicBtn');
+
 document.getElementById('openInvite').addEventListener('click',()=>{
-  opening.classList.add('hide'); page.classList.add('show'); musicBtn.classList.add('on');
+  opening.classList.add('hide');
+  page.classList.add('show');
+  musicBtn.classList.add('on');
   audio.play().then(()=>musicBtn.classList.add('playing')).catch(()=>{});
-  setTimeout(()=>opening.remove(),1000);
+  window.setTimeout(()=>opening.remove(),900);
 });
+
 musicBtn.addEventListener('click',()=>{
-  if(audio.paused){audio.play().then(()=>musicBtn.classList.add('playing')).catch(()=>{});}
-  else{audio.pause();musicBtn.classList.remove('playing');}
+  if(audio.paused){
+    audio.play().then(()=>musicBtn.classList.add('playing')).catch(()=>{});
+  }else{
+    audio.pause();
+    musicBtn.classList.remove('playing');
+  }
 });
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
 </script>
 </body>
